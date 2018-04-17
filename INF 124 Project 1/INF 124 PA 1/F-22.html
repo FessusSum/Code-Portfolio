@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>F-22 "Raptor"</title>
+
+</head>
+<style>
+h1 {
+	text-align: center;
+	float: center;
+	margin: 0;
+
+
+}
+.button {
+	background-color: #008CBA;
+    border: none;
+    color: white;
+    float: left;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+<body>
+	<a href="NewFile1.html" class = "button">Back to Store</a></button>
+	<h1 style="font-size:300%;text-align:center;">F-22 "Raptor"</h1>
+	<p style="font-size:200%;text-align:left;"> <img src="F-22.jpg" alt="F-22 Raptor" style="float:right;margin:0px 100px;width:615.2px;height:460.4px;">
+	Name: F-22 "Raptor"<br>
+	Role: Stealth Air Superiority Fighter<br>
+	Manufacturer: Lockheed Martin<br>
+	National Origin: United States<br>
+	Unit Cost: $150,000,000<br>
+	<br>
+	<strong>General Characteristics</strong><br>
+	Crew: Pilot<br>
+	Length: 18.92 meters<br>
+	Wingspan: 13.56 meters<br>
+	Maximum Speed: Mach 1.95<br>
+	<br>
+	</p>
+	
+	<p style="font-size:150%;">
+	<br>
+	The F-22 "Raptor" is the first and currently only fifth generation fighter that is combat ready. Featuring a previously unheard of combination of supercruise capability, supermaneuverability, stealth, and sensor fusion, the F-22 is a force to be reckoned with. Thanks to its powerful engines, the F-22 can supercruise, flying at supersonic speeds without wasting fuel on afterburners and allowing it to readily intercept aircraft before they can reach their targets. On approach, the F-22 is nearly impossible to detect by radar thanks to its reduced radar cross section and radar-absorbent airframe. Unlike other stealth aircraft that rely on these techniques, the F-22 maintains its level of stealth with far less maintenence required. 
+	<br>
+	<br>
+	The F-22 was designed with stealth in mind. As such, it is very difficult to detect by radar or by the naked eye, thanks to several design measures such as the use of radar-absorbent material, fixed-gemoetry serpentine inlets, flat thrust-vectoring nozzles, reduced emissions, and acoustic signatures. Furthermore, the internal weapons bays and cannon make sure that the F-22 only reveals itself when it fires upon an unsuspecting target when it is too late to react. Unlike other stealth aircraft, the F-22 does not require special maintenance processes and can be stored and repaired in a normal hangar.
+	<br>
+	<br>
+	Armament: 20mm M61A2 Vulcan cannon, 3 internal weapons bays capable of holding 8 missiles in total, 4 external hardpoints with total capacity of 9080 kg    
+	</p>
+	
+	<!-- ORDER FORM SECTION  -->
+	<br><br>
+	<h1>Order Form</h1>
+	<form action="/action_page.php">
+	<b>Number of Planes Order: </b>
+	<input type="number" id="quantity">
+	<p style="color:red" id="alarmQuantity"></p>
+	<br>
+	<b>First Name: </b>
+	<input type="text" id="firstname">
+	<p style="color:red" id="alarmFN"></p>
+	<br>
+	<b>Last Name: </b>
+	<input type="text" id="lastname">
+	<p style="color:red" id="alarmLN"></p>
+	<br>
+	<b>Phone Number (10 digit numbers only): </b>
+	<input type='tel' id="phone">
+	<p style="color:red" id="alarmPH"></p>
+	<br>
+	<b>SHIPPING INFORMATION</b>
+	<br><br>
+	<b>Address: </b>
+	<input type='text' id="street" size="50">
+	<p style="color:red" id="alarmAD"></p>
+	<br>
+	<b>City: </b>
+	<input type='text' id="city" size = "50">
+	<p style="color:red" id="alarmCT"></p>
+	<br>
+	<b>State: </b>
+	<input type='text' id="state" size = "20">
+	<p style="color:red" id="alarmST"></p>
+	<br>
+	<b>Zip Code</b>
+	<input type='text' id="zipcode" size = "5">
+	<p style="color:red" id="alarmZIP"></p>
+	<br>
+	<b>Shipping Method: </b>
+	<select id="shipping">
+		<option value="Delivery (Assembled)">Delivery (Assembled)</option>
+		<option value="Delivery (Economy)">Delivery (Economy)</option>
+		<option value="Rebase (Concierge)">Rebase (Concierge)</option>
+		<option value="Rebase (Personal)">Rebase (Personal)</option>
+	</select>
+	<br><br>
+	<b>CREDIT CARD INFORMATION</b>
+	<br><br>
+	<b>Card Type</b>
+	<select id="cardtype">
+		<option value="Visa">VISA</option>
+		<option value="MasterCard">MasterCard</option>
+		<option value="Amex">American Express</option>
+		<option value="Discover">Discover</option>
+	</select>
+	<br><br>
+	
+	<b>Card number (16 digits no spaces): </b>
+	<input type='text' id='cardnumber' size = "16">
+	<p style="color:red" id="alarmCC"></p>
+	<br>
+	<!-- <input type="submit" value="Buy Now" onclick="validation();" /> -->
+	<button type="button" onclick="validation()">Submit</button>
+	<br>
+	</form>
+<script>
+function validation(){
+	var quantity, fname, lname, phone, text, goodphone, address,
+	city, state, zip, goodzip, ship, cardtype, card, goodcard, subject, body;
+	// Get the value of the input fields
+	quantity = document.getElementById("quantity").value;
+	fname = document.getElementById("firstname").value;
+	lname = document.getElementById("lastname").value;
+	phone = document.getElementById("phone").value;
+	address = document.getElementById("street").value;
+	city = document.getElementById("city").value;
+	state = document.getElementById("state").value;
+	zip = document.getElementById("zipcode").value;
+	ship = document.getElementById("shipping").value;
+	cardtype = document.getElementById("cardtype").value;
+	card = document.getElementById("cardnumber").value;
+	goodphone = phone.match(/^[0-9]{10}$/);
+	goodzip = zip.match(/^[0-9]{5}$/);
+	goodcard = card.match(/^[0-9]{16}$/);
+	
+	// If quantity is empty, alarm 
+	if (quantity <= 0 || quantity == ""){
+		text = "Please enter the quantity of the order";
+		document.getElementById("alarmQuantity").innerHTML = text;
+		}
+	else if (fname == ""){
+		text = "Please enter a first name";
+		document.getElementById("alarmFN").innerHTML = text;}
+	else if (lname == ""){
+		text = "Please enter a last name";
+		document.getElementById("alarmLN").innerHTML = text;}
+	else if (phone.length != 10 || !goodphone){
+		text = "Please enter a phone number";
+		document.getElementById("alarmPH").innerHTML = text;}
+	else if (address == ""){
+		text = "Please enter a shipping address";
+		document.getElementById("alarmAD").innerHTML = text;}
+	else if (city == ""){
+		text = "Please enter a city";
+		document.getElementById("alarmCT").innerHTML = text;}
+	else if (state == ""){
+		text = "Please enter a state";
+		document.getElementById("alarmST").innerHTML = text;}
+	else if (zip.length != 5 || !goodzip){
+		text = "Invalid zip code";
+		document.getElementById("alarmZIP").innerHTML = text;}
+	else if (card.length !=16 || !goodcard){
+		text = "Invalid credit card number";
+		document.getElementById("alarmCC").innerHTML = text;}
+	else {
+		mailSubj = "Order for " + document.getElementsByTagName("title")[0].innerHTML;;
+		mailBody = 'Number of Planes Order: ' + quantity +
+			'\nFirst Name: ' + fname +
+			'\nLast Name: ' + lname +
+			'\nPhone Number: ' + phone +
+			"\nSHIPPING INFORMATION" +
+			'\nAddress: ' + address +
+			'\nCity: ' + city +
+			'\nState: ' + state +
+			'\nZip Code: ' + zip +
+			'\n Shipping Method: ' + ship +
+			'\nCREDIT CARD INFORMATION' +
+			'\nCard Type: ' + cardtype +
+			'\nCard Number: ' + card;
+		document.location.href="mailto:marcus.kincaid@pandora.net?subject="
+				+ encodeURIComponent(mailSubj)
+				+ "&body=" + encodeURIComponent(mailBody);}
+}
+</script>
+</body>
+</html>

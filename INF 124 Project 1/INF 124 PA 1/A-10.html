@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A-10 "Thunderbolt II"</title>
+
+</head>
+<style>
+h1 {
+	text-align: center;
+	float: center;
+	margin: 0;
+
+
+}
+.button {
+	background-color: #008CBA;
+    border: none;
+    color: white;
+    float: left;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+<body>
+	<a href="NewFile1.html" class = "button">Back to Store</a></button>
+	<h1 style="font-size:300%;text-align:center;">A-10 "Thunderbolt II"</h1>
+	<p style="font-size:200%;text-align:left;"> <img src="A-10.jpg" alt="E-2_AWACS" style="float:right;margin:0px 100px;width:615.2px;height:460.4px;">
+	Name: A-10 "Thunderbolt II"<br>
+	Role: Close Air Support and Ground Attack<br>
+	Manufacturer: Fairchild Republic<br>
+	National Origin: United States<br>
+	Unit Cost: $18,800,000<br>
+	<br>
+	<strong>General Characteristics</strong><br>
+	Crew: Pilot<br>
+	Length: 16.26 meters<br>
+	Wingspan: 17.53 meters<br>
+	Maximum Speed: Mach 0.57<br>
+	<br>
+	</p>
+	
+	<p style="font-size:150%;">
+	<br>
+	The A-10 "Thunderbolt II" is a twin turbofan engine, straight wing attack aircraft designed for sustained close air support of ground forces. Envisioned as a direct improvement on the aging and inadequate A-1 "Skyraider"", the A-10 is designed around the massive 30mm GAU-8 Avenger rotary autocannon which can disable modern tanks by saturating them with alternating 30mm depleted high explosive uranium rounds and armor piercing incendiary rounds. In addition, the A-10 comes with 11 hardpoints for a total of 7,260kg of munitions. The A-10's airframe was designed with durability in mind, made with a simple design requiring minimal maintenance and 540kg of titanium armor. While close air support is largely performed by attack helicopters such as the AH-1Z "Viper" or Mi-28 "Havoc" in most modern militaries, the A-10 is called upon for situations deemed too dangerous for helicopter units. <br>
+	<br>
+	The A-10 has received many upgrades to the onboard avionics including an updated IFF system and Precision Engagement upgrades. The modern A-10 is capable of being deployed from the most primitive of forward airfields allowing it to provide support to ground forces even at the farthest reaches of the battlefield. Able to be refueled, rearmed, and repaired with minimal equipment, the A-10 is capable of operating in nearly every scenario. The A-10's most defining characteristic is its durability, being capable of suffering damage that would otherwise ground more fragile airframes.
+	<br>
+	<br>
+	Armament: 30mm GAU-8/A Avenger rotary autocannon, 11 munitions hardpoints with a combined capacity of 7,260 kg.    
+	</p>
+	
+<!-- ORDER FORM SECTION  -->
+	<br><br>
+	<h1>Order Form</h1>
+	<form action="/action_page.php">
+	<b>Number of Planes Order: </b>
+	<input type="number" id="quantity">
+	<p style="color:red" id="alarmQuantity"></p>
+	<br>
+	<b>First Name: </b>
+	<input type="text" id="firstname">
+	<p style="color:red" id="alarmFN"></p>
+	<br>
+	<b>Last Name: </b>
+	<input type="text" id="lastname">
+	<p style="color:red" id="alarmLN"></p>
+	<br>
+	<b>Phone Number (10 digit numbers only): </b>
+	<input type='tel' id="phone">
+	<p style="color:red" id="alarmPH"></p>
+	<br>
+	<b>SHIPPING INFORMATION</b>
+	<br><br>
+	<b>Address: </b>
+	<input type='text' id="street" size="50">
+	<p style="color:red" id="alarmAD"></p>
+	<br>
+	<b>City: </b>
+	<input type='text' id="city" size = "50">
+	<p style="color:red" id="alarmCT"></p>
+	<br>
+	<b>State: </b>
+	<input type='text' id="state" size = "20">
+	<p style="color:red" id="alarmST"></p>
+	<br>
+	<b>Zip Code</b>
+	<input type='text' id="zipcode" size = "5">
+	<p style="color:red" id="alarmZIP"></p>
+	<br>
+	<b>Shipping Method: </b>
+	<select id="shipping">
+		<option value="Delivery (Assembled)">Delivery (Assembled)</option>
+		<option value="Delivery (Economy)">Delivery (Economy)</option>
+		<option value="Rebase (Concierge)">Rebase (Concierge)</option>
+		<option value="Rebase (Personal)">Rebase (Personal)</option>
+	</select>
+	<br><br>
+	<b>CREDIT CARD INFORMATION</b>
+	<br><br>
+	<b>Card Type</b>
+	<select id="cardtype">
+		<option value="Visa">VISA</option>
+		<option value="MasterCard">MasterCard</option>
+		<option value="Amex">American Express</option>
+		<option value="Discover">Discover</option>
+	</select>
+	<br><br>
+	
+	<b>Card number (16 digits no spaces): </b>
+	<input type='text' id='cardnumber' size = "16">
+	<p style="color:red" id="alarmCC"></p>
+	<br>
+	<!-- <input type="submit" value="Buy Now" onclick="validation();" /> -->
+	<button type="button" onclick="validation()">Submit</button>
+	<br>
+	</form>
+<script>
+function validation(){
+	var quantity, fname, lname, phone, text, goodphone, address,
+	city, state, zip, goodzip, ship, cardtype, card, goodcard, subject, body;
+	// Get the value of the input fields
+	quantity = document.getElementById("quantity").value;
+	fname = document.getElementById("firstname").value;
+	lname = document.getElementById("lastname").value;
+	phone = document.getElementById("phone").value;
+	address = document.getElementById("street").value;
+	city = document.getElementById("city").value;
+	state = document.getElementById("state").value;
+	zip = document.getElementById("zipcode").value;
+	ship = document.getElementById("shipping").value;
+	cardtype = document.getElementById("cardtype").value;
+	card = document.getElementById("cardnumber").value;
+	goodphone = phone.match(/^[0-9]{10}$/);
+	goodzip = zip.match(/^[0-9]{5}$/);
+	goodcard = card.match(/^[0-9]{16}$/);
+	
+	// If quantity is empty, alarm 
+	if (quantity <= 0 || quantity == ""){
+		text = "Please enter the quantity of the order";
+		document.getElementById("alarmQuantity").innerHTML = text;
+		}
+	else if (fname == ""){
+		text = "Please enter a first name";
+		document.getElementById("alarmFN").innerHTML = text;}
+	else if (lname == ""){
+		text = "Please enter a last name";
+		document.getElementById("alarmLN").innerHTML = text;}
+	else if (phone.length != 10 || !goodphone){
+		text = "Please enter a phone number";
+		document.getElementById("alarmPH").innerHTML = text;}
+	else if (address == ""){
+		text = "Please enter a shipping address";
+		document.getElementById("alarmAD").innerHTML = text;}
+	else if (city == ""){
+		text = "Please enter a city";
+		document.getElementById("alarmCT").innerHTML = text;}
+	else if (state == ""){
+		text = "Please enter a state";
+		document.getElementById("alarmST").innerHTML = text;}
+	else if (zip.length != 5 || !goodzip){
+		text = "Invalid zip code";
+		document.getElementById("alarmZIP").innerHTML = text;}
+	else if (card.length !=16 || !goodcard){
+		text = "Invalid credit card number";
+		document.getElementById("alarmCC").innerHTML = text;}
+	else {
+		mailSubj = "Order for " + document.getElementsByTagName("title")[0].innerHTML;;
+		mailBody = 'Number of Planes Order: ' + quantity +
+			'\nFirst Name: ' + fname +
+			'\nLast Name: ' + lname +
+			'\nPhone Number: ' + phone +
+			"\nSHIPPING INFORMATION" +
+			'\nAddress: ' + address +
+			'\nCity: ' + city +
+			'\nState: ' + state +
+			'\nZip Code: ' + zip +
+			'\n Shipping Method: ' + ship +
+			'\nCREDIT CARD INFORMATION' +
+			'\nCard Type: ' + cardtype +
+			'\nCard Number: ' + card;
+		document.location.href="mailto:marcus.kincaid@pandora.net?subject="
+				+ encodeURIComponent(mailSubj)
+				+ "&body=" + encodeURIComponent(mailBody);}
+}
+</script>
+</body>
+</html>
